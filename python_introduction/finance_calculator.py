@@ -10,5 +10,5 @@ monthly_savings = income - expenses
 annual_savings = (monthly_savings * 12 ) + (monthly_savings * 12 * 0.05)
 
  # print result
-print(f"Your Monthly Savings are: {monthly_savings}:. 2f")
-print(f"Your Total Annual Savings are: {annual_savings}:. 2f")
+print(f"Your Monthly Savings are: {monthly_savings}")
+print(f"Your Total Annual Savings are: {annual_savings}")
