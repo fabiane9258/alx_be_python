@@ -1,8 +1,9 @@
 task = input("Enter your task: ")
-task_priority = input("What is task's priority (high, medium, low): ").lower()
 time_bound = input("Is your task time bound? (yes, no)").lower()
+priority = input("What is task's priority (high, medium, low): ").lower()
 
-match task_priority:
+
+match priority:
     case "high":
         print("Do this task rightaway!: ")
     case "medium":
