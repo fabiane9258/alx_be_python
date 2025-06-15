@@ -2,7 +2,7 @@ import sys
 from bank_account import BankAccount
 
 def main():
-    account = BankAccount(250.00)  # <<== Hardcoded initial balance
+    account = BankAccount()  # Defaults to $250.00
 
     if len(sys.argv) < 2:
         print("Usage: python main-0.py <command>:<amount>")
@@ -22,7 +22,7 @@ def main():
         else:
             print("Insufficient funds.")
     elif command == "display":
-        print(account.display_balance())  # <<== This is the output tester expects
+        print(account.display_balance())  # ✅ This must be reached
     else:
         print("Invalid command.")
 
