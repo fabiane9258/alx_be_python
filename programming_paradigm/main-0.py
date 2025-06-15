@@ -6,11 +6,11 @@ BALANCE_FILE = "balance.txt"
 
 def load_balance():
     if os.path.exists(BALANCE_FILE):
-        with open(BALANCE_FILE, "r") as f:
-            try:
+        try:
+            with open(BALANCE_FILE, "r") as f:
                 return float(f.read())
-            except ValueError:
-                return 0.0
+        except ValueError:
+            return 0.0
     return 0.0
 
 def save_balance(balance):
@@ -26,9 +26,9 @@ def main():
         print("Commands: deposit, withdraw, display")
         sys.exit(1)
 
-    command_parts = sys.argv[1].split(":")
-    command = command_parts[0].lower()
-    amount = float(command_parts[1]) if len(command_parts) > 1 else None
+    parts = sys.argv[1].split(":")
+    command = parts[0].lower()
+    amount = float(parts[1]) if len(parts) > 1 else None
 
     if command == "deposit" and amount is not None:
         account.deposit(amount)
@@ -43,7 +43,6 @@ def main():
     else:
         print("Invalid command.")
 
-    # Save balance to file
     save_balance(account.get_balance())
 
 if __name__ == "__main__":
